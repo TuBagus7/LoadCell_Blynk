@@ -20,6 +20,7 @@ const int LOADCELL_SCK_PIN = 19;
 #define VPIN_tb V0
 #define VPIN_bb V1
 #define VPIN_kg V2
+#define VPIN_bmi V3
 
 char ssid[] = "Redmi Note 10 Pro";
 char pass[] = "1sampai8";
@@ -138,7 +139,7 @@ void result(){
 
   lcd.setCursor(11,1);
   lcd.print(BMI); 
-
+  Blynk.virtualWrite(VPIN_bmi, BMI);
   if (BMI < 17){
     statusnya = 1;
     lcd.setCursor(0,1);
